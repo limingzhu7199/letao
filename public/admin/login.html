@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="./css/commont.css">
     <title>Document</title>
 </head>
@@ -20,19 +21,20 @@
                 </div>
                 <!-- 表单 -->
                 <div class="panel-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" >
                         <!-- 用户名 -->
                         <div class="form-group">
                             <label for="username" class="col-sm-3 control-label">用户名</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="请输入用户名">
+                                    <!-- autocomplete = "off" 清除历史记录 -->
+                                <input type="text" autocomplete = "off" class="form-control" name="username" id="inputEmail3" placeholder="请输入用户名">
                             </div>
                         </div>
                         <!-- 密码 -->
                         <div class="form-group">
                             <label for="password" class="col-sm-3 control-label">密码</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="请输入密码">
                             </div>
                         </div>
                         <!-- 按钮 -->
@@ -51,6 +53,9 @@
 </body>
 <script src="./lib/jquery/jquery.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.js"></script>
-<script src="./lib/bootstrap/js/npm.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="./js/commont.js"></script>
+<script src="./js/login.js"></script>
+
 
 </html>
