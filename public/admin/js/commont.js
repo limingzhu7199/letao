@@ -1,26 +1,28 @@
-
-// 进度条
-    //关闭进度环
-    // NProgress.configure({
-    //     showSpinner:false
-    // })
-    // $(document).ajaxStart(function(){
-    //    NProgress.start();
-    // }).ajaxStop(function(){
-    //  setTimeout(function(){
-    //     NProgress.done();
-    //  },500);
-    // });
-
-
+   //关闭进度环
+NProgress.configure({
+    showSpinner: false
+  });
+  
+  $(document).ajaxStart(function () {
+    //开始进度条
+    NProgress.start();
+  });
+  
+  $(document).ajaxStop(function () {
+    //结束进度条
+    setTimeout(function () {
+      NProgress.done();
+    }, 500);
+  });
+  
     // 二级菜单的显示与隐藏
     // 通过切换类now
-   $(function(){
+
      $('.child').prev().on('click',function(){
         // console.log("jejej");
         $(this).next().slideToggle();
-     })
-}); 
+     });
+
 
 
 //侧边栏滑动效果
@@ -30,17 +32,16 @@
                      //添加一个now类left:-180px;
                 //在lt_main增加过渡属性
                      //添加一个now类padding-left:0px;    
-$(function(){
+
     $('.icon-left').on('click',function(){
         // console.log("lala");
         $('.lt_aside').toggleClass("now");
         $('.lt_main').toggleClass("now");
-    })
-})
+    });
+
 
 
 // 退出功能
-$(function(){
   $('.icon-logout').on('click',function(){
     //   console.log("jejeje");
     $('#logout-modal').modal("show");
@@ -58,8 +59,7 @@ $(function(){
                 }           
             }
         })
-    })
-  }) 
+    }) 
 });
 
 
