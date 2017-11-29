@@ -1,5 +1,17 @@
 /* 登陆静态页面 */
-body{
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+}
+
+.bg-body{
     background-color: #222d32;
 }
 .mt-150{
