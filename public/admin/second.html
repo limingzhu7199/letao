@@ -73,6 +73,8 @@
         <li class="active">二级分类</li>
       </ol>
     </div>
+
+
     <div class="content">
       <button class="btn btn-default mb-20 add-cate">添加分类</button>
       <!-- 先不写 -->
@@ -139,38 +141,38 @@
         </div>
         <div class="modal-body">
           <form id="form">
-
+           
             <div class="form-group">
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                 <span class="dropdown-text">请选择一级分类</span>
-                 <span class="caret"></span>
+                  <span class="dropdown-text">请选择一级分类</span>
+                  <span class="caret"></span>
                 </button>
-
+                  <!-- 存放选择a标签的id值 value=a的id-->
                 <input type="hidden" name="categoryId">
-
+                 <!-- 下拉列表,动态渲染 -->
                 <ul class="dropdown-menu">
-
                   <!-- 模板，挖坑 -->
-
                 </ul>
               </div>
             </div>
-
+            <!-- 输入二级分类的文本框 -->
             <div class="form-group">
               <input type="text" autocomplete="off" class="form-control" name="brandName" placeholder="请输入二级分类的名称">
             </div>
-
+            <!-- 上传图片按钮+文件上传文本(覆盖,透明) -->
             <div class="form-group">
               <button class="btn btn-default btn-pic">上传图片</button>
               <input type="file" class="btn btn-default" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic">
             </div>
-
+             
+            <!-- 渲染上传的图片 -->
             <div class="form-group img_box">
-             <img src="./images/none.png" width="100" height="100" alt="">
-
-             <input type="hidden" name="brandLogo">
-             <input type="hidden" name="hot" value="11">
+              <img src="./images/none.png" width="100" height="100" alt="">
+              <!-- input的value 存放图片的路径 -->
+              <input type="hidden" name="brandLogo">
+              <!-- 后台需要传四个值 -->
+              <input type="hidden" name="hot" value="11">
             </div>
           </form>
         </div>
@@ -200,12 +202,13 @@
   <!-- 模态框的下拉列表模板 -->
   <script type="text/html" id="list-tpl">
     {{each rows v i}}
-       <li>
-        <a data-id="{{v.id}}" href="#">{{v.categoryName}}</a>
-      </li>
-  {{/each}}
+    <li>
+      <!-- 设置一个自定义属性,以便获得对应的id -->
+      <a data-id="{{v.id}}" href="#">{{v.categoryName}}</a>
+    </li>
+    {{/each}}
   </script>
- 
+
   <script src="./lib/jquery/jquery.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.js"></script>
   <!-- 表单校验 -->

@@ -125,7 +125,7 @@ $(function () {
 
 
 
-  //添加功能
+  //表单校验成功添加功能
   $form.on('success.form.bv',function(e){
     e.preventDefault();
     //发送ajax请求
@@ -156,9 +156,4 @@ $(function () {
     })
   })
   
-
-
-
-
-
 })
