@@ -2,117 +2,172 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
-    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
-    <link rel="stylesheet" href="./css/commont.css">
-    <title>后台登陆页面</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="./css/commont.css">
+  <title>后台一级分类页面</title>
 </head>
 
 <body>
-    <!-- 侧边栏 -->
-    <div class="lt_aside">
-        <div class="header">
-            <a href="index.html">乐淘网</a>
-        </div>
-        <div class="userinfo">
-            <img src="./images/default.png" alt="">
-            <p>超级管理员</p>
-        </div>
-        <div class="meun">
-            <ul>
-                <li>
-                    <a href="user.html">
-                        <span class="glyphicon glyphicon-user"></span>
-                        用户管理
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <span class="glyphicon glyphicon-list"></span>
-                        分类管理
-                    </a>
-                    <div class="child">
-                        <a href="first.html" class="first now">一级分类</a>
-                        <a href="second.html" class="two">二级分类</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="goods.html">
-                        <span class="glyphicon glyphicon-tags"></span>
-                        商品管理
-                    </a>
-                </li>
-            </ul>
-        </div>
+  <!-- 侧边栏 -->
+  <div class="lt_aside">
+    <div class="header">
+      <a href="index.html">乐淘网</a>
     </div>
-    <!-- 主体部分 -->
-    <div class="lt_main">
-        <div class="header">
-            <a href="javascript:;" class="icon-left">
-                <span class="glyphicon glyphicon-align-justify pull-left"></span>
-            </a>
-            <a href="javascript:;" class="icon-logout">
-                <span class="glyphicon glyphicon-log-out pull-right"></span>
-            </a>
-        </div>
-
-        <!-- 面包屑导航 -->
-        <div class="nav">
-            <ol class="breadcrumb">
-                <li>
-                    <a href="#">管理系统</a>
-                </li>
-                <li>
-                    <a href="#">分类管理</a>
-                </li>
-                <li class="active">一级分类</li>
-            </ol>
-        </div>
-        <div class="content">
-
-            <!-- 先不写 -->
-        </div>
+    <div class="userinfo">
+      <img src="./images/default.png" alt="">
+      <p>超级管理员</p>
+    </div>
+    <div class="meun">
+      <ul>
+        <li>
+          <a href="user.html">
+            <span class="glyphicon glyphicon-user"></span>
+            用户管理
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="category">
+            <span class="glyphicon glyphicon-list"></span>
+            分类管理
+          </a>
+          <div class="child">
+            <a href="first.html" class="first now">一级分类</a>
+            <a href="second.html" class="two">二级分类</a>
+          </div>
+        </li>
+        <li>
+          <a href="goods.html">
+            <span class="glyphicon glyphicon-tags"></span>
+            商品管理
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 主体部分 -->
+  <div class="lt_main">
+    <div class="header">
+      <a href="javascript:;" class="icon-left">
+        <span class="glyphicon glyphicon-align-justify pull-left"></span>
+      </a>
+      <a href="javascript:;" class="icon-logout">
+        <span class="glyphicon glyphicon-log-out pull-right"></span>
+      </a>
     </div>
 
+    <!-- 面包屑导航 -->
+    <div class="nav">
+      <ol class="breadcrumb">
+        <li>
+          <a href="#">管理系统</a>
+        </li>
+        <li>
+          <a href="#">分类管理</a>
+        </li>
+        <li class="active">一级分类</li>
+      </ol>
+    </div>
+    <div class="content">
+      <button class="btn btn-default mb-20 add-cate">添加分类</button>
+      <!-- 先不写 -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td width="30%">序号</td>
+            <td width="70%">分类名称</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 引入模板 -->
+        </tbody>
+      </table>
+
+      <!-- 分页 -->
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
+    </div>
+  </div>
 
 
 
-    <!-- 模态框 -->
-    <div class="modal fade" tabindex="-1" id="logout-modal">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">温馨提示</h4>
-                </div>
-                <div class="modal-body text-danger">
 
-                    <p>
-                        <span class="glyphicon glyphicon-info-sign"></span>你确定要退出后台管理系统吗？</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary btn-logout">退出</button>
-                </div>
+  <!-- 模态框退出 -->
+  <div class="modal fade" tabindex="-1" id="logout-modal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body text-danger">
+
+          <p>
+            <span class="glyphicon glyphicon-info-sign"></span>你确定要退出后台管理系统吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn-logout">退出</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 添加分类模态框 -->
+  <div class="modal fade" tabindex="-1" id="add-modal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <div class="modal-body">
+          <form id="form">
+            <div class="form-group">
+              <input type="text" autocomplete="off" class="form-control" name="categoryName" placeholder="请输入一级分类的名称">
             </div>
+          </form>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" form="form" class="btn btn-primary">添加</button>
+        </div>
+      </div>
     </div>
+  </div>
 
 
-</body>
-<script src="./lib/jquery/jquery.js"></script>
-<script src="./lib/bootstrap/js/bootstrap.js"></script>
-<script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
-<!-- 进度条 -->
-<script src="./lib/nprogress/nprogress.js"></script>
-<script src="./js/commont.js"></script>
-<script src="./js/login.js"></script>
+  <!-- 用户页面模板 -->
+  <script type="text/html" id="first-tpl">
+    {{each rows v i}}
+    <tr>
+      <td>{{(page-1)*size+i+1}}</td>
+      <td>{{v.categoryName}}</td>
+      </tr>
+      {{/each}}
+  </script>
+  <script src="./lib/jquery/jquery.js"></script>
+  <script src="./lib/bootstrap/js/bootstrap.js"></script>
+  <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+  <!-- 1.引入模板引擎 -->
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <!-- 分页 -->
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+  <!-- 进度条 -->
+  <script src="./lib/nprogress/nprogress.js"></script>
+  <script src="./js/commont.js"></script>
+  <script src="./js/first.js"></script>
+
 
 
 </html>

@@ -15,6 +15,21 @@ NProgress.configure({
     }, 500);
   });
   
+   //非登陆页面，判断当前用户是否是登录了，如果登录了，就继续，如果没登陆，需要跳转到登录页面。
+   if(location.href.indexOf("login.html")===-1){
+       //发送ajax请求，说明用户没有登陆，则跳转到登陆页面
+       $.ajax({
+           type:'get',
+           url:'/employee/checkRootLogin',
+           success:function(data){
+              if(data.error ===400){
+                  location.href = "login.html";
+              }
+           }
+       })
+   }
+
+
     // 二级菜单的显示与隐藏
     // 通过切换类now
 

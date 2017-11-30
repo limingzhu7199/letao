@@ -145,7 +145,28 @@ a:link,a:visited,a:hover,a:active{
     margin-left: 20px;
 }
 
+.content{
+    padding: 10px 30px;
+}
+.table.table-bordered td{
+  text-align: center;
+  vertical-align: middle;
+} 
 
+.mb-20{
+    margin-bottom: 20px;
+}
+
+
+#fileupload{
+    width: 82px;
+    height: 34px;
+    position: relative;
+    left: 0;
+    top: -34px;
+    opacity: 0;
+
+} 
 
 
 
