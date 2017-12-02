@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>乐淘商城首页</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./lib/mui/css/mui.css">
+  <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="./css/commen.css">
+  <link rel="stylesheet" href="./css/category.css">
+
+</head>
+
+<body>
+  <div class="lt-container">
+    <!-- 头部 -->
+    <div class="lt-header">
+      <a class="icon_left" href="index.html">
+        <span class="mui-icon mui-icon-back"></span>
+      </a>
+      <h4>乐淘云购</h4>
+      <a class="icon_right" href="search.html">
+        <span class="fa fa-search"></span>
+      </a>
+    </div>
+
+    <!-- 主体 -->
+    <div class="lt-main">
+      <div class="lt-left">
+        <div class="mui-scroll-wrapper">
+          <ul class="mui-scroll first">
+           
+           <!-- 挖坑 -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="lt-right">
+        <div class="mui-scroll-wrapper">
+          <ul class="mui-scroll second">
+           <!-- 挖坑 -->
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+  <!-- 底部 -->
+  <div class="lt-footer">
+    <ul>
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li class="now">
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <!-- 创建一级分类的模板 -->
+  <script type="text/html" id="tpl">
+    
+    {{each rows v i}}
+    <li data-id="{{v.id}}" class="{{i==0?'now':''}}">
+        <a href="javascript:;" >
+          {{v.categoryName}}
+        </a>
+      </li>
+      {{/each}}
+  </script>
+
+  <script type="text/html" id="tpl2">
+    {{if rows.length==0}}
+    <p>
+     没有
+    </p>
+    {{/if}}
+    {{each rows v i}}
+    <li>
+        <a href="#" class="lt-itembrand">
+          <img src="{{v.brandLogo}}" />
+          <p>{{v.brandName}}</p>
+        </a>
+      </li>
+      {{/each}}
+  </script>
+  <script src="./lib/mui/js/mui.js"></script>
+  <script src="./lib/zepto/zepto.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/commen.js"></script>
+  <script src="./js/category.js"></script>
+</body>
+
+
+</html>
