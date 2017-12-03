@@ -122,9 +122,27 @@ a.lt-item:nth-child(2n-1){
 }
 
 
+.lt-search{
+  padding: 10px;
 
+}
+.lt-search .search{
+  height: 34px;
+  border: 1px solid #007aff;
+  font-size: 12px;
+  border-radius: 4px;
+}
 
+.search_btn{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0 4px 4px 0;
+}
 
+.lt-pro-size span.now{
+  background-color: #069;
+}
 
 
 
